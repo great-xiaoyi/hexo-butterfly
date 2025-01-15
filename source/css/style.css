@@ -1,0 +1,65 @@
+/* 默认背景（浅色模式） */
+:root {
+    --card-bg: rgba(255, 255, 255, 0.95); /* 增加透明度，使背景更厚重 */
+    --card-border: 3px solid rgba(170, 190, 220, 1); /* 边框颜色 */
+}
+
+/* 深色模式背景 */
+[data-theme="dark"] {
+    --card-bg: rgba(35, 37, 58, 0.95); /* 深色背景的更厚重的半透明效果 */
+    --card-border: 3px solid rgba(60, 70, 90, 1); /* 深色模式下的边框颜色 */
+}
+
+/* 所有需要使用背景和边框的元素 */
+#aside_content .card-widget,
+#recent-posts > .recent-post-item,
+.layout_page > div:first-child:not(.recent-posts),
+.layout_post > #page,
+.layout_post > #post,
+.read-mode .layout_post > #post {
+    background: var(--card-bg); /* 使用半透明背景 */
+    border: var(--card-border); /* 使用边框 */
+    border-radius: 8px; /* 圆角 */
+    backdrop-filter: blur(12px); /* 加强模糊效果，使背景更加厚重 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* 增加阴影强度，提升立体感 */
+}
+
+/* 流光渐变动画效果，适用于个人信息卡片 */
+@keyframes flow-gradient {
+    0% {
+        background: linear-gradient(-45deg, #90B8FF, #E0A8FF, #A8C8FF);
+        background-size: 300% 300%;
+        background-position: 0% 0%;
+    }
+    50% {
+        background: linear-gradient(-45deg, #90B8FF, #E0A8FF, #A8C8FF);
+        background-size: 300% 300%;
+        background-position: 100% 100%;
+    }
+    100% {
+        background: linear-gradient(-45deg, #90B8FF, #E0A8FF, #A8C8FF);
+        background-size: 300% 300%;
+        background-position: 0% 0%;
+    }
+}
+
+#aside-content > .card-widget.card-info {
+    animation: flow-gradient 10s ease infinite; /* 平滑动画，持续30秒 */
+}
+
+#aside-content > .card-widget.card-info {
+    animation: flow-gradient 10s ease infinite; /* 平滑动画，持续30秒 */
+}
+
+#aside-content > .card-widget.card-info {
+    animation: flow-gradient 10s linear infinite; /* 动画持续30秒 */
+}
+
+/* 深色模式下个人信息卡片背景不受流光影响 */
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+    animation: none; /* 禁用流光动画 */
+    background: linear-gradient(-45deg, rgba(24, 40, 72, .2),
+    rgba(35, 37, 58, .9),
+    rgba(35, 37, 58, .9),
+    rgba(24, 40, 72, .2)); /* 保持深色模式的渐变背景 */
+}
