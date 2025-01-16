@@ -1,13 +1,13 @@
 /* 默认背景（浅色模式） */
 :root {
-    --card-bg: rgba(255, 255, 255, 0.95); /* 增加透明度，使背景更厚重 */
+    --card-bg: rgba(255, 255, 255, 0.95); /* 浅色模式的透明背景 */
     --card-border: 3px solid rgba(170, 190, 220, 1); /* 边框颜色 */
 }
 
 /* 深色模式背景 */
 [data-theme="dark"] {
-    --card-bg: rgba(35, 37, 58, 0.95); /* 深色背景的更厚重的半透明效果 */
-    --card-border: 3px solid rgba(60, 70, 90, 1); /* 深色模式下的边框颜色 */
+    --card-bg: rgba(35, 37, 58, 0.98); /* 深色模式背景透明度提高 */
+    --card-border: 3px solid rgba(60, 70, 90, 1); /* 边框颜色 */
 }
 
 /* 所有需要使用背景和边框的元素 */
@@ -44,22 +44,21 @@
 }
 
 #aside-content > .card-widget.card-info {
-    animation: flow-gradient 10s ease infinite; /* 平滑动画，持续30秒 */
-}
-
-#aside-content > .card-widget.card-info {
-    animation: flow-gradient 10s ease infinite; /* 平滑动画，持续30秒 */
-}
-
-#aside-content > .card-widget.card-info {
-    animation: flow-gradient 10s linear infinite; /* 动画持续30秒 */
+    animation: flow-gradient 10s linear infinite; /* 动画持续10秒 */
 }
 
 /* 深色模式下个人信息卡片背景不受流光影响 */
 [data-theme="dark"] #aside-content > .card-widget.card-info {
-    animation: none; /* 禁用流光动画 */
-    background: linear-gradient(-45deg, rgba(24, 40, 72, .2),
-    rgba(35, 37, 58, .9),
-    rgba(35, 37, 58, .9),
-    rgba(24, 40, 72, .2)); /* 保持深色模式的渐变背景 */
+    animation: none !important; /* 禁用流光动画 */
+    background: linear-gradient(-45deg, rgba(24, 40, 72, .5),
+    rgba(35, 37, 58, .98), /* 删除了多余的 !important */
+    rgba(35, 37, 58, .98),
+    rgba(24, 40, 72, .5)); /* 深色模式下背景渐变，增加透明度 */
+}
+
+/* 个人信息卡片中卡片背景不透明（如果你希望有更好的对比度） */
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+    background-color: rgba(35, 37, 58, 0.98) !important; /* 保持透明度，增加厚度 */
+    backdrop-filter: none; /* 去除模糊效果，防止影响透明度 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* 增加阴影强度，提升立体感 */
 }

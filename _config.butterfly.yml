@@ -22,8 +22,7 @@ menu:
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
   链接||fas fa-list:
-    个人音乐: /music/ || fas fa-music
-    个人视频: /movies/ || fas fa-video
+    悄悄话: /shuoshuo/ || fa-solid fa-phone
   来找我聊天: http://117.72.81.48:5200 || fas fa-heart
 
 
@@ -507,13 +506,13 @@ copy:
 # 需要安装 hexo-wordcount 插件
 wordcount:
   # 是否启用字数统计
-  enable: false
+  enable: true
   # 在文章元数据中显示文章字数
   post_wordcount: true
   # 在文章元数据中显示阅读时间
   min2read: true
   # 在侧边栏的网站信息中显示网站总字数
-  total_wordcount: true
+  total_wordcount: false
 
 # 不蒜子计数，用于统计网站的 PV / UV
 busuanzi:
@@ -621,7 +620,7 @@ comments:
   # 如果你不需要评论，可以留空
   # 选择：Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # 两个评论系统的格式：Disqus,Waline
-  use: livere
+  use: waline
   # 在按钮旁边显示评论名称
   text: true
   # 懒加载：当评论元素进入浏览器的视口时，评论系统才会加载。
@@ -694,9 +693,9 @@ valine:
 # https://waline.js.org/
 waline:
   # 服务器 URL
-  serverURL:
-  # 背景
-  bg:
+  serverURL: comments.xiaoyihome.top
+
+  bg: http://117.72.81.48/i/2025/01/13/6784b3544bc72.gif
   # 使用 Waline 页面浏览量作为页面浏览量
   pageview: false
   # 选项
@@ -775,9 +774,9 @@ remark42:
 # https://artalk.js.org/guide/frontend/config.html
 artalk:
   # 服务器
-  server:
+  server: 'http://103.112.96.73:8080'
   # 站点
-  site:
+  site: '阿易不易'
   # 使用 Artalk 访客计数作为页面浏览量
   visitor: false
   # 选项
@@ -1173,8 +1172,8 @@ inject:
     - <link rel="stylesheet" href="/css/juzhong.css">
     - <link rel="stylesheet" href="/css/loading-bar.css">
     - <link rel="stylesheet" href="/css/style.css">
-
     - <script src="/live2d-widget-v3/load.js""></script>
+
   bottom:
     - <div class="aplayer no-destroy" data-id="9126617675" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="false"></div>
 
@@ -1253,6 +1252,4 @@ CDN:
     # valine:
     # waline_css:
     # waline_js:
-
-live2d:
-  enable: true
+# Need to install the hexo-wordcount plugin
